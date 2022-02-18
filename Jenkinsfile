@@ -43,6 +43,17 @@ pipeline{
                 }
             }
         }
+         stage("Finding misconfig in Helm"){
+            steps{
+                script{
+                    dir('/home/joajaen1/kube') {
+                        withEnv(['DATREE_TOKEN=Ljh7zme9fLxhYgSE9eDbiM']) {
+                            sh ' helm datree test finalhapp/'
+                        }                       
+                    }
+                }
+            }
+        }
           
             
     }
