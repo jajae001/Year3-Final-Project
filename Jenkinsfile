@@ -54,6 +54,22 @@ pipeline{
                 }
             }
         }
+          stage("Pushing helm into nexus"){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'Docker-P', variable: 'Dpass')]) {
+                        dir('/home/joajaen1/kube') {
+                        sh '''
+                        helmversion=$( helm show chart finalhapp | grep version | cut -d: -f 2 | tr -d ' ')
+                        tar -czvf  finalhapp-${helmversion}.tgz finalhapp/
+                          curl -u admin:$Dpass http://34.125.67.134:8081/repository/JSDNK-helm-hosted/ --upload-file finalhapp-${helmversion}.tgz -v
+                    ''' 
+                        }
+                    }                   
+
+                }
+            }
+        }
           
             
     }
