@@ -13,8 +13,13 @@ pipeline{
                 script {
                     withSonarQubeEnv(credentialsId: 'sonar-t') {
                         sh 'chmod +x gradlew'                      
-                        sh './gradlew sonarqube --debug' 
+                        sh './gradlew sonarqube --info' 
                     }
+                    timeout(time: 30, unit: 'MINUTES') {
+                      def qg = waitForQualityGate()
+                      if (qg.status != 'OK') {
+                           error "Pipeline aborted as q-gate failed: ${qg.status}"
+                        }
                                     
 
                 }
