@@ -70,6 +70,18 @@ pipeline{
                 }
             }
         }
+        stage('Kube cluster deployment') {
+            steps {
+                script{
+                    dir('/home/joajaen1/kube') {
+                    withCredentials([kubeconfigFile(credentialsId: 'kube-config', variable: 'KUBECONFIG')]) {
+                            sh 'helm upgrade --install --set image.repository="34.125.67.134:8083/fproject" --set image.tag="${BUILDN}" springapplication finalhapp/ '
+                        }  
+                    }
+
+                }
+            }
+        } 
           
             
     }
