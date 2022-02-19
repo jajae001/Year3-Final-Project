@@ -70,6 +70,23 @@ pipeline{
                 }
             }
         }
+        stage("admin approval deployment?"){
+             steps{
+                script{
+                    timeout(5) {
+                        
+                        mail to: 'jajae001fp@gmail.com',
+                            from: '',
+                            subject: "Pipeline Approval: ${currentBuild.fullDisplayName}",
+                            body: " Hey Joy, Project: ${env.JOB_NAME} , Build: ${env.BUILD_NUMBER} Deployment needs approval ... Please check ${env.BUILD_URL}"
+                        
+                        input( message:"Would you like to deploy ${env.JOB_NAME} Build: ${env.BUILD_NUMBER} ?", ok: "Yes!Deploy")
+
+                    }
+                }
+            }
+
+        }
         stage('Kube cluster deployment') {
             steps {
                 script{
@@ -85,5 +102,14 @@ pipeline{
           
             
     }
+     post {	
+        always {
+        mail to: 'jajae001fp@gmail.com',
+             from: '',
+             subject: "Pipeline Status: ${currentBuild.fullDisplayName}, ${currentBuild.result}",
+             body: " Hey Joy, Your Project: ${env.JOB_NAME} , Build: ${env.BUILD_NUMBER} is a ${currentBuild.result} ... Please check ${env.BUILD_URL}"
+             
+        }
+	}
  
 }
