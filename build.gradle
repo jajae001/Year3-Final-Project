@@ -33,11 +33,11 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
 sonarqube {
     properties {
          property 'sonar.host.url', 'http://34.125.246.141:9000'
        
-    
     }
 	
 }
