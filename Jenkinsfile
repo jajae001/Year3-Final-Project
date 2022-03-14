@@ -1,6 +1,9 @@
-pipeline{
+{
     agent any
- 
+    environment{
+        BUILDN = "${env.BUILD_ID}"
+        
+    } 
     stages{
         stage("Check SonarQube --QG"){
             agent {
