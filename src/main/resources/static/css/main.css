@@ -1,0 +1,126 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.navbar-brand{
+    font-size: 3 rem;
+    color: #1e1014;;
+    text-transform: uppercase;
+    font-family: 'Titan One', cursive;
+}
+.navbar-brand:hover{
+    color:#caffd0;
+}
+.nav-link,.nav-item{
+    margin-right: 11px;
+    margin-left: 11px;    
+    color: #1e1014;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    
+}
+.nav-link:hover{
+    color: #c9e4e7;
+
+}
+.find{
+    height: 41px;
+    width: 80%;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 55px;
+    outline: none;
+    border: #b4a0e5 3px solid;
+    margin-right: -50px;
+    font-family: 'Oswald', sans-serif;
+    
+}
+.findbtn{
+    height:41px;
+    width: 60px;
+    outline: none;
+    border: none;
+    border-radius: 60px;
+    background: #ca3cff;
+    font-weight: 500;
+    color: whitesmoke;
+    font-family: 'Oswald', sans-serif;
+}
+.findbtn:hover{
+    background: #b4a0e5;
+}
+.hook{
+    background-image: url('../img/hydrangea1920.jpg');
+    background-size: cover;
+    border: #caffd0 2px solid;
+    border-radius: 200em;
+    background-position: 60% 60%;
+    height: 90vh;
+    width: 100%;   
+    
+}
+.hook h1{
+    font-size:5rem;
+    font-weight: 800;
+    font-family: 'Oswald', sans-serif;
+    
+    color:rgb(254, 252, 239);
+
+}
+.shopbtn{
+    height:60px;
+    width: 20%;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background: #b4a0e5;
+    font-weight: 800;
+    color: whitesmoke;
+    font-family: 'Oswald', sans-serif;
+    font-size: 120%;
+    
+}
+.img-luid{
+    height: 100px;
+    border: #caffd0 2px solid;
+    opacity: 60%;
+    
+}
+.icontag{
+    color: #1e1014;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+
+}
+.fph1{
+    font-weight: 800;
+    color: #1e1014;
+}
+.card{
+    background: rgb(243, 238, 243);
+    border: none;
+}
+.footer{
+    background-color: #1e1014;
+    color: #b4a0e5;
+}
+.footerbtn{
+    height: 46px;
+    width: 100px;
+    background: #caffd0;
+    margin-left: -10px;
+    border: 3px solid white;
+    font-weight: 700;
+
+}
+.footh1{
+    font-weight: 700;
+    color: #b4a0e5;
+    padding-bottom: 25px;
+}
+
+
+
+
+    
