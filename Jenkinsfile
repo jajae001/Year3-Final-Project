@@ -83,7 +83,7 @@
                             subject: "Pipeline Approval: ${currentBuild.fullDisplayName}",
                             body: " Hey Joy, Project: ${env.JOB_NAME} , Build: ${env.BUILD_NUMBER} Deployment needs approval ... Please check ${env.BUILD_URL}"
                         
-                        input( message:"Would you like to deploy ${env.JOB_NAME} Build: ${env.BUILD_NUMBER}..?", ok: "Yes!Deploy")
+                        input( message:"Would you like to deploy ${env.JOB_NAME} Build: ${env.BUILD_NUMBER}?", ok: "Yes!Deploy")
 
                     }
                 }
