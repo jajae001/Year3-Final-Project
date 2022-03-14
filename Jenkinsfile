@@ -1,9 +1,9 @@
-{
+pipeline{
     agent any
     environment{
         BUILDN = "${env.BUILD_ID}"
         
-    } 
+    }
     stages{
         stage("Check SonarQube --QG"){
             agent {
@@ -16,21 +16,20 @@
                 script {
                     withSonarQubeEnv(credentialsId: 'sonar-t') {
                         sh 'chmod +x gradlew'                      
-                        sh './gradlew sonarqube' 
+                        sh './gradlew sonarqube --info' 
                     }
-                    timeout(time: 45, unit: 'MINUTES') {
+                    timeout(time: 1, unit: 'HOURS') {
                       def qg = waitForQualityGate()
                       if (qg.status != 'OK') {
                            error "Pipeline aborted as q-gate failed: ${qg.status}"
                         }
 
-                    }
-                                    
+                    }                      
 
                 }
             }
         }
-         stage("Docker image building"){
+        stage("Docker image building"){
             steps{
                 script{
                     withCredentials([string(credentialsId: 'Docker-P', variable: 'Dpass')]) {
@@ -46,7 +45,7 @@
                 }
             }
         }
-         stage("Finding misconfig in Helm"){
+        stage("Finding misconfig in Helm"){
             steps{
                 script{
                     dir('/home/joajaen1/kube') {
@@ -57,7 +56,7 @@
                 }
             }
         }
-          stage("Pushing helm into nexus"){
+        stage("Pushing helm into nexus"){
             steps{
                 script{
                     withCredentials([string(credentialsId: 'Docker-P', variable: 'Dpass')]) {
@@ -83,7 +82,7 @@
                             subject: "Pipeline Approval: ${currentBuild.fullDisplayName}",
                             body: " Hey Joy, Project: ${env.JOB_NAME} , Build: ${env.BUILD_NUMBER} Deployment needs approval ... Please check ${env.BUILD_URL}"
                         
-                        input( message:"Would you like to deploy ${env.JOB_NAME} Build: ${env.BUILD_NUMBER}..?", ok: "Yes!Deploy")
+                        input( message:"Would you like to deploy ${env.JOB_NAME} Build: ${env.BUILD_NUMBER} ?", ok: "Yes!Deploy")
 
                     }
                 }
@@ -101,11 +100,10 @@
 
                 }
             }
-        } 
-          
+        }     
             
     }
-     post {	
+    post {	
         always {
         mail to: 'jajae001fp@gmail.com',
              from: '',
@@ -113,6 +111,5 @@
              body: " Hey Joy, Your Project: ${env.JOB_NAME} , Build: ${env.BUILD_NUMBER} is a ${currentBuild.result} ... Please check ${env.BUILD_URL}"
              
         }
-	}
- 
+	}  
 }
