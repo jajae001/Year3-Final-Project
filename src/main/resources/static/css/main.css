@@ -19,38 +19,30 @@
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     
+    
 }
 .nav-link:hover{
     color: #c9e4e7;
 
 }
-.find{
-    height: 41px;
-    width: 80%;
-    padding-left: 2px;
-    padding-right: 2px;
-    border-radius: 55px;
+
+.fab fa-align-justify{
+    background-color: #1e1014;
+} 
+.finds{
+    border-radius: 60%;
     outline: none;
-    border: #b4a0e5 3px solid;
-    margin-right: -50px;
-    font-family: 'Oswald', sans-serif;
-    
-}
-.findbtn{
-    height:41px;
-    width: 60px;
-    outline: none;
-    border: none;
-    border-radius: 60px;
-    background: #ca3cff;
+    border: none;   
+    background: #b4a0e5;
     font-weight: 500;
     color: whitesmoke;
     font-family: 'Oswald', sans-serif;
+    font-size: 120%;
+    text-decoration: none;
+    padding: 10px; 
 }
-.findbtn:hover{
-    background: #b4a0e5;
-}
-.hook{
+
+.hook {
     background-image: url('../img/hydrangea1920.jpg');
     background-size: cover;
     border: #caffd0 2px solid;
@@ -60,42 +52,67 @@
     width: 100%;   
     
 }
+.birthhook {
+    background-image: url('../img/cosmos-1280.jpg');
+    background-size: cover;
+    border: #caffd0 2px solid;
+    border-radius: 300em;
+    background-position: 60% 60%;
+    height: 60vh;
+    width: 100%;    
+    
+}
+.horohook{
+    background-image: url('../img/psky.jgp.jpg');
+    background-size: cover;
+    border: #caffd0 2px solid;
+    border-radius: 300em;
+    background-position: 60% 60%;
+    height: 60vh;
+    width: 100%;   
+}
 .hook h1{
     font-size:5rem;
     font-weight: 800;
-    font-family: 'Oswald', sans-serif;
-    
+    font-family: 'Oswald', sans-serif;    
     color:rgb(254, 252, 239);
 
 }
-.shopbtn{
-    height:60px;
-    width: 20%;
-    outline: none;
-    border: none;
-    border-radius: 50%;
-    background: #b4a0e5;
+.birthhook h1{
+    font-size:5rem;
     font-weight: 800;
-    color: whitesmoke;
-    font-family: 'Oswald', sans-serif;
-    font-size: 120%;
-    
+    font-family: 'Oswald', sans-serif;    
+    color:#caffd0;
+
 }
+.horohook h1{
+    font-size:5rem;
+    font-weight: 900;
+    font-family: 'Oswald', sans-serif;    
+    color:#1e1014;
+
+}
+
 .img-luid{
-    height: 100px;
+    height: 300px;
     border: #caffd0 2px solid;
-    opacity: 60%;
+    opacity: 80%;
     
 }
 .icontag{
     color: #1e1014;
     font-family: 'Oswald', sans-serif;
     font-weight: 800;
+  
 
 }
 .fph1{
     font-weight: 800;
     color: #1e1014;
+}
+.fph2{
+    font-weight: 800;
+    color: #caffd0;
 }
 .card{
     background: rgb(243, 238, 243);
@@ -103,24 +120,44 @@
 }
 .footer{
     background-color: #1e1014;
-    color: #b4a0e5;
+    color: #ca3cff;
+    padding-left: 20px;
 }
-.footerbtn{
-    height: 46px;
-    width: 100px;
-    background: #caffd0;
-    margin-left: -10px;
-    border: 3px solid white;
-    font-weight: 700;
+.foot-t{
+    padding-left: 28px;
+    
+}
+
+.foot-link,.foot-item,.footp{
+       
+    color: #caffd0;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    
+        
+}
+.foot-lg, ul,  a{
+    list-style: none;
+    text-decoration: none;
+
+} 
+.foot-link:hover{
+    color: #b4a0e5;
 
 }
 .footh1{
     font-weight: 700;
-    color: #b4a0e5;
+    color: #ca3cff;
     padding-bottom: 25px;
+    
+}
+.bwrite{
+    font-family: 'Titan', sans-serif;
+    font-size: 120%;
+}
+.dark{
+    background-color: #1e1014;
+    color: whitesmoke;
 }
 
-
-
-
-    
