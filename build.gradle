@@ -51,7 +51,7 @@ jacoco {
 
 sonarqube {
     properties {
-         property 'sonar.host.url', 'http://34.125.246.141:9000'
+         property 'sonar.host.url', 'http://35.226.235.240:9096'
 		 property "sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/jacoco.xml"
        
     }
