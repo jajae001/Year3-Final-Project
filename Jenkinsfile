@@ -14,10 +14,7 @@ pipeline{
             }
             steps{
                 script {
-                    // withSonarQubeEnv(credentialsId: 'sonar-t') {
-                    //     sh 'chmod +x gradlew'                      
-                    //     sh './gradlew  build jacocoTestReport sonarqube ' 
-                    // }
+                 
                     withSonarQubeEnv(credentialsId: 'sonar-auth', installationName: 'sonar-server2') {
                         sh 'chmod +x gradlew'                      
                         sh './gradlew  build jacocoTestReport sonarqube ' 
