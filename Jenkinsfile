@@ -17,7 +17,7 @@ pipeline{
                  
                     withSonarQubeEnv(credentialsId: 'sonar-auth', installationName: 'sonar-server2') {
                         sh 'chmod +x gradlew'                      
-                        sh './gradlew  build jacocoTestReport sonarqube ' 
+                        sh './gradlew sonarqube ' 
                     }
                     timeout(time: 1, unit: 'HOURS') {
                       def qg = waitForQualityGate()
