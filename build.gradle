@@ -4,6 +4,7 @@ plugins {
 	id 'java'
 	id 'war'
 	id "org.sonarqube" version "3.3"
+	id 'jacoco'
 }
 
 group = 'com.webapp'
@@ -32,11 +33,26 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport
+}
+jacocoTestReport {
+    dependsOn test 
+	    reports {
+		html.enabled true
+        xml.required = true
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+jacoco {
+    toolVersion = "0.8.7"
+   
 }
 
 sonarqube {
     properties {
-         property 'sonar.host.url', 'http://34.125.246.141:9000'
+         property 'sonar.host.url', 'http://35.226.235.240:9096'
+		 property "sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/jacoco.xml"
        
     }
 	
