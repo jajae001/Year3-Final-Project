@@ -1,1 +1,6 @@
-# Year3-Final-Project
+# Year3-Final-Project CI/CD Pipeline
+
+My final submission will be a fully functional web app that has been built and updated using Devops methodology. It will encompass the full development life cycle and will use technologies such as GCP, Jenkins, Docker, Kube3.
+The aim of the project is to be able to recreate a fully operational Devops work cycle using CI/CD pipelines. In my project I’ll be building a web application and will measure the project success based on the correct configuration and continuous use of a pipeline in the development of the web application. 
+CI stands for Continues Integration, where a developer’s code is frequently integrated into the repository. The frequency of the integration is used to help prevent bugs and clashes that could develop from merging large bulks of code together. The benefit of the CI is that it’s more time efficient to its alternatives and errors can be identified earlier on in the development, when the integration build fails. This means that the developer can focus on the failure and can stop the bug from being an issue during the deployment stage of the cycle. 
+Continuous Deployment is a reference to the release of the code of application that has been integrated and tested. This is the version of the application that has been verified to be in working order. The state of the application can be updated as often as new code has been built and tested. This will likely lead to more than one release of an application.
